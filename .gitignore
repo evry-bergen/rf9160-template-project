@@ -76,5 +76,5 @@ dkms.conf
 #
 
 /build*/
-/build
+/build*/*
 
