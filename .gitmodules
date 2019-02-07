@@ -1,0 +1,12 @@
+[submodule "ncs/zephyr"]
+	path = ncs/zephyr
+	url = https://github.com/NordicPlayground/fw-nrfconnect-zephyr
+[submodule "ncs/nrfxlib"]
+	path = ncs/nrfxlib
+	url = https://github.com/NordicPlayground/nrfxlib.git
+[submodule "ncs/mcuboot"]
+	path = ncs/mcuboot
+	url = https://github.com/NordicPlayground/fw-nrfconnect-mcuboot.git
+[submodule "ncs/nrf"]
+	path = ncs/nrf
+	url = https://github.com/NordicPlayground/fw-nrfconnect-nrf.git

@@ -1,0 +1,27 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Cortex Debug",
+            "cwd": "${workspaceRoot}/build",
+			"executable": "./zephyr/zephyr.elf",
+            "request": "launch",
+            "type": "cortex-debug",
+            "servertype": "jlink",
+			"device": "nrf9160",
+			"interface":"swd",
+			"runToMain": true
+        },
+        {
+            "name": "Cortex Attach",
+            "cwd": "${workspaceRoot}/build",
+            "executable": "./zephyr/zephyr.elf",
+            "request": "attach",
+            "type": "cortex-debug",
+            "servertype": "jlink",
+            "device": "nrf9160",
+			"interface":"swd",
+            "runToMain": true
+        }
+    ]
+}
