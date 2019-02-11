@@ -1,0 +1,12 @@
+device nrf9160
+if SWD
+speed 1000
+
+sleep 100
+r
+
+loadfile zephyr/zephyr.hex
+sleep 100
+r
+g
+exit
