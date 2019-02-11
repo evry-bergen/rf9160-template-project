@@ -1,6 +1,7 @@
 NRF9160 Zephyr-project template
 ===============================
 
+
 # Clone repo
 
 ```sh
@@ -9,6 +10,7 @@ $ git clone $REPO_URL $PROJECT_DIR
 $ cd $PROJECT_DIR
 $ git submodule update --init --recursive
 ```
+
 
 # Install requirements
 
@@ -19,6 +21,7 @@ $ python -mensurepip
 $ pip install -r ncs/zephyr/scripts/requirements.txt
 $ pip install -r ncs/nrf/scripts/requirements.txt
 ```
+
 
 ### Install toolchain
 
@@ -36,9 +39,13 @@ $ mv gcc-arm-none-eabi-8-2018-q4-major 8.2018.q4-major
 $ ln -s 8.2018.q4-major latest
 ```
 
+Ensure the toolchain is specified in the PATH-variable.
+
 ### Install JLink-tools
 
 Go to the [Segger website](https://www.segger.com/downloads/jlink/) and download the _Software and Documentation Pack_ for your platform.
+
+Ensure the JLink-tools are specified in the PATH-variable.
 
 
 ## Building
@@ -86,6 +93,18 @@ This should hopefully trigger a breakpoint in `main()`, indicating everyting is 
 ```
 
 
+## Building Secure-Boot
+
+Some of the examples provided by Nordic-Semi require secure-boot to function properly. To help anyone confused by this, we have provided a helper-script which compiles and
+flashes the target in a single command:
+
+```sh
+$ scripts/build-and-program.sh -b
+```
+
+This helper-script also provides a target for the AT-Client example provided by Nordic-Semi. See `scripts/build-and-program.sh --help` for more details.
+
+
 ## Using VsCode
 
 Install [VsCode](https://code.visualstudio.com) and opend the project directory. This should load a complete development environment complete with build-tasks and debug-configurations
@@ -113,3 +132,14 @@ In addition to the tasks above, the following Launch/Debug-configurations have b
 After starting the Debug-session, the debugger should break at `main()`.
 
 In some cases, the debug-session may be unresponsive. In this case, try clicking "restart" then "continue".
+
+
+# Where to go next
+
+The NRF9160 Provides of features not explored in this tutorial. To help you get started, here are some resources:
+
+* [NRF9160 Examples](https://github.com/Rallare/fw-nrfconnect-nrf/tree/nrf9160_samples/samples/nrf9160) - NRF9160 Examples provided by GitHub-user [Rallare](https://github.com/Rallare)
+* [NRF9160 Documentation](https://www.nordicsemi.com/DocLib?Product=nRF9160%20Core%20Documentation) - NRF9160 Reference Manual, User guides, etc.
+* [Zephyr Docs](https://docs.zephyrproject.org/latest/introduction/index.html) - Zephyr Documentation
+* [Nordic DecZone](https://devzone.nordicsemi.com/) - Developer Forum for Nordic-Semi platforms such as NRF9160, NRF52, etc.
+
